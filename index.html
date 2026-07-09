@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ODS 5 e ODS 7 | Agenda 2030</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        ods5: '#FF3A98',
+                        ods7: '#1ECB4F',
+                        dark: '#0F172A',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .scroll-smooth {
+                scroll-behavior: smooth;
+            }
+            .card-shadow {
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            }
+            .fade-in {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: all 0.6s ease-out;
+            }
+            .fade-in.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .stat-number {
+                transition: all 1.5s ease-out;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-dark dark:text-gray-200 scroll-smooth">
+    <!-- Menu de Navegação Fixo -->
+    <header id="navbar" class="fixed w-full top-0 left-0 z-50 bg-white/90 dark:bg-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
+        <div class="container mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
+            <a href="#inicio" class="flex items-center gap-2">
+                <span class="text-xl font-bold bg-gradient-to-r from-ods5 to-ods7 bg-clip-text text-transparent">ODS 5 & 7</span>
+            </a>
+
+            <nav class="hidden md:flex gap-6">
+                <a href="#inicio" class="hover:text-ods5 dark:hover:text-ods5 transition-colors">Início</a>
+                <a href="#ods5" class="hover:text-ods5 dark:hover:text-ods5 transition-colors">ODS 5</a>
+                <a href="#ods7" class="hover:text-ods7 dark:hover:text-ods7 transition-colors">ODS 7</a>
+                <a href="#referencias" class="hover:text-primary dark:hover:text-primary transition-colors">Referências</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <button id="darkModeToggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <i class="fa fa-moon-o dark:hidden text-lg"></i>
+                    <i class="fa fa-sun-o hidden dark:inline text-lg"></i>
+                </button>
+                <button id="menuBtn" class="md:hidden text-xl">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobileMenu" class="hidden absolute w-full bg-white dark:bg-dark border-b border-gray-200 dark:border-gray-800 shadow-lg">
+            <div class="container mx-auto px-4 py-3 flex flex-col gap-3">
+                <a href="#inicio" class="py-2 hover:text-ods5 transition-colors">Início</a>
+                <a href="#ods5" class="py-2 hover:text-ods5 transition-colors">ODS 5</a>
+                <a href="#ods7" class="py-2 hover:text-ods7 transition-colors">ODS 7</a>
+                <a href="#referencias" class="py-2 hover:text-primary transition-colors">Referências</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24">
+        <!-- Seção Início -->
+        <section id="inicio" class="py-12 md:py-20 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+            <div class="container mx-auto px-4 md:px-6 text-center">
+                <h1 class="text-3xl md:text-5xl font-bold mb-6 fade-in">Agenda 2030 da ONU</h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-gray-700 dark:text-gray-300 fade-in">Conheça dois dos Objetivos de Desenvolvimento Sustentável fundamentais para construir um futuro mais justo, igualitário e sustentável para todos.</p>
+
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-12">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 card-shadow hover:shadow-xl transition-shadow fade-in border-t-4 border-ods5">
+                        <h2 class="text-2xl font-bold text-ods5 mb-4">ODS 5</h2>
+                        <h3 class="text-xl font-semibold mb-3">Igualdade de Gênero</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Alcançar a igualdade de gênero e empoderar todas as mulheres e meninas.</p>
+                        <a href="#ods5" class="inline-block px-5 py-2 bg-ods5 text-white rounded-lg hover:bg-ods5/90 transition-colors">Ver detalhes</a>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 card-shadow hover:shadow-xl transition-shadow fade-in border-t-4 border-ods7">
+                        <h2 class="text-2xl font-bold text-ods7 mb-4">ODS 7</h2>
+                        <h3 class="text-xl font-semibold mb-3">Energia Acessível e Limpa</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Garantir acesso confiável, sustentável, moderno e a preço acessível à energia para todos.</p>
+                        <a href="#ods7" class="inline-block px-5 py-2 bg-ods7 text-white rounded-lg hover:bg-ods7/90 transition-colors">Ver detalhes</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção ODS 5 -->
+        <section id="ods5" class="py-16 md:py-24">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12 fade-in">
+                        <h2 class="text-3xl md:text-4xl font-bold text-ods5 mb-4">ODS 5 – Igualdade de Gênero</h2>
+                        <p class="text-lg text-gray-600 dark:text-gray-300">Garantir direitos iguais e eliminar todas as formas de discriminação</p>
+                    </div>
+
+                    <div class="space-y-10">
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 md:p-8 card-shadow fade-in">
+                            <h3 class="text-2xl font-semibold mb-4">✨ O que é a Agenda 2030?</h3>
+                            <p class="mb-4">A Agenda 2030 é um plano de ação criado pela Organização das Nações Unidas em 2015, assinado por 193 países, incluindo o Brasil.</p>
+                            <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+                                <li>17 Objetivos de Desenvolvimento Sustentável (ODS)</li>
+                                <li>169 metas específicas</li>
+                                <li>Diversos indicadores para acompanhar o progresso até 2030</li>
+                                <li>Lema: <strong>"Não deixar ninguém para trás"</strong></li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 md:p-8 card-shadow fade-in">
+                            <h3 class="text-2xl font-semibold mb-4">✨ O que significa igualdade de gênero?</h3>
+                            <p class="mb-4">Não significa que homens e mulheres sejam exatamente iguais em tudo, mas sim que tenham os mesmos direitos, oportunidades, respeito e liberdade para fazer suas próprias escolhas, sem limitações por preconceitos ou estereótipos.</p>
+                            <div class="grid md:grid-cols-2 gap-4 mt-6">
+                                <div class="bg-pink-50 dark:bg-gray-700 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-ods5 mb-2">Direitos garantidos</h4>
+                                    <ul class="list-disc pl-5 text-sm">
+                                        <li>Acesso à educação e saúde</li>
+                                        <li>Oportunidades de trabalho iguais</li>
+                                        <li>Participação política</li>
+                                        <li>Proteção contra violência</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-red-50 dark:bg-gray-700 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-red-500 mb-2">Situações a combater</h4>
+                                    <ul class="list-disc pl-5 text-sm">
+                                        <li>Desigualdade salarial</li>
+                                        <li>Casamento infantil</li>
+                                        <li>Violência doméstica</li>
+                                        <li>Discriminação e assédio</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 md:p-8 card-shadow fade-in">
+                            <h3 class="text-2xl font-semibold mb-4">✨ Principais Metas da ODS 5</h3>
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div class="flex items-start gap-3">
+                                    <span class="text-ods5 font-bold">1.</span>
+                                    <p>Acabar com toda forma de discriminação contra mulheres e meninas</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="text-ods5 font-bold">2.</span>
+                                    <p>Eliminar todas as formas de violência e exploração</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="text-ods5 font-bold">3.</span>
+                                    <p>Acabar com casamento infantil e uniões precoces</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="text-ods5 font-bold">4.</span>
+                                    <p>Valorizar e compartilhar responsabilidades domésticas</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="text-ods5 font-bold">5.</span>
+                                    <p>Garantir participação plena na vida política e econômica</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="text-ods5 font-bold">6.</span>
+                                    <p>Garantir acesso à saúde e direitos reprodutivos</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="text-ods5 font-bold">7.</span>
+                                    <p>Igualdade de acesso a recursos econômicos e propriedade</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="text-ods5 font-bold">8.</span>
+                                    <p>Estimular acesso feminino à tecnologia e inovação</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 md:p-8 card-shadow fade-in">
+                            <h3 class="text-2xl font-semibold mb-4">✨ Situação no Brasil</h3>
+                            <p class="mb-4">O Brasil conta com leis importantes como a Lei Maria da Penha, que protege mulheres contra violência. Ainda assim, existem desafios:</p>
+                            <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+                                <li>Mulheres recebem em média salários menores que homens em funções equivalentes</li>
+                                <li>Menor representatividade em cargos de liderança e política</li>
+                                <li>Realizam cerca de 2x mais trabalho doméstico não remunerado</li>
+                                <li>Índices elevados de violência doméstica e assédio</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 md:p-8 card-shadow fade-in">
+                            <h3 class="text-2xl font-semibold mb-4">✨ Curiosidades</h3>
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div class="p-3 bg-pink-50 dark:bg-gray-700 rounded-lg">
+                                    <p class="text-sm">A igualdade de gênero impulsiona o avanço de TODOS os outros 16 ODS</p>
+                                </div>
+                                <div class="p-3 bg-pink-50 dark:bg-gray-700 rounded-lg">
+                                    <p class="text-sm">Mulheres representam cerca de 50% da população mundial</p>
+                                </div>
+                                <div class="p-3 bg-pink-50 dark:bg-gray-700 rounded-lg">
+                                    <p class="text-sm">Quanto mais tempo uma menina estuda, maior é o desenvolvimento da sua comunidade</p>
+                                </div>
+                                <div class="p-3 bg-pink-50 dark:bg-gray-700 rounded-lg">
+                                    <p class="text-sm">Equipes com diversidade de gênero tomam decisões mais inovadoras e eficazes</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 md:p-8 card-shadow fade-in">
+                            <h3 class="text-2xl font-semibold mb-4">✨ Como os estudantes podem contribuir?</h3>
+                            <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+                                <li>Respeitar colegas independentemente do gênero</li>
+                                <li>Combater preconceitos, piadas ofensivas e discriminação</li>
+                                <li>Dividir tarefas e responsabilidades de forma justa</li>
+                                <li>Incentivar meninas e meninos em todas as áreas do conhecimento</li>
+                                <li>Denunciar situações de violência ou assédio</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 md:p-8 card-shadow fade-in">
+                            <h3 class="text-2xl font-semibold mb-4">Conclusão</h3>
+                            <p>A ODS 5 busca construir uma sociedade em que mulheres e homens tenham os mesmos direitos, oportunidades e proteção. Ela combate a discriminação e remove obstáculos que impedem mulheres e meninas de desenvolver todo o seu potencial. Além de beneficiar milhões de pessoas, a igualdade de gênero contribui para o crescimento econômico, melhoria da educação, saúde e uma sociedade mais justa e sustentável.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção ODS 7 -->
+        <section id="ods7" class="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12 fade-in">
+                        <h2 class="text-3xl md:text-4xl font-bold text-ods7 mb-4">ODS 7 – Energia Acessível e Limpa</h2>
+                        <p class="text-lg text-gray-600 dark:text-gray-300">Garantir energia sustentável e acessível para todos</p>
+                    </div>
+
+                    <div class="space-y-10">
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 md:p-8 card-shadow fade-in">
+                            <h3 class="text-2xl font-semibold mb-4">O que é a ODS 7?</h3>
+                            <p>A ODS 7 busca garantir que todas as pessoas tenham acesso à energia de forma confiável, moderna, sustentável e com preço acessível. A energia é indispensável para hospitais, escolas, empresas, transporte e residências, além de ser essencial para o desenvolvimento econômico e social.</p>
+                            <p class="mt-3">Esse objetivo também incentiva o uso de fontes renováveis, como solar, eólica, hidrelétrica e biomassa, que reduzem impactos ambientais e tornam a geração mais sustentável.</p>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 md:p-8 card-shadow fade-in">
+                            <h3 class="text-2xl font-semibold mb-4">Por que é importante?</h3>
+                            <p>A energia está presente em todas as atividades diárias: conservar alimentos, usar equipamentos médicos, acessar internet, estudar e trabalhar.</p>
+                            <div class="grid sm:grid-cols-2 gap-6 mt-6">
+                                <div class="text-center p-4 bg-green-50 dark:bg-gray-700 rounded-lg">
+                                    <p class="text-3xl font-bold text-ods7 stat-number" data-value="92">0%</p>
+                                    <p class="text-sm mt-2">População mundial com acesso à eletricidade (2025)</p>
+                                </div>
+                                <div class="text-center p-4 bg-red-50 dark:bg-gray-700 rounded-lg">
+                                    <p class="text-3xl font-bold text-red-500 stat-number" data-value="666">0</p>
+                                    <p class="text-sm mt-2">Milhões de pessoas ainda vivem sem eletricidade</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 md:p-8 card-shadow fade-in">
+                            <h3 class="text-2xl font-semibold mb-4">Principais Metas</h3>
+                            <ul class="list-disc pl-6 space-y-3 text-gray-700 dark:text-gray-300">
+                                <li>Garantir acesso universal à energia moderna, confiável e acessível</li>
+                                <li>Ampliar a participação das energias renováveis na matriz energética</li>
+                                <li>Melhorar a eficiência energética, reduzindo desperdícios</li>
+                                <li>Incentivar pesquisas e investimentos em tecnologias limpas</li>
+                                <li>Expandir infraestrutura para regiões com acesso limitado</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 md:p-8 card-shadow fade-in">
+                            <h3 class="text-2xl font-semibold mb-4">Situação no Brasil</h3>
+                            <p>O Brasil possui uma das matrizes energéticas mais renováveis do mundo. De acordo com o Balanço Energético Nacional 2025, cerca de <strong>50%</strong> da energia utilizada vem de fontes renováveis: hidrelétricas, biomassa, eólica e solar.</p>
+                            <p class="mt-3">Nos últimos anos, a instalação de placas solares e parques eólicos cresceu muito. Apesar disso, ainda é necessário modernizar a rede de distribuição e ampliar a infraestrutura para atender à demanda crescente.</p>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 md:p-8 card-shadow fade-in">
+                            <h3 class="text-2xl font-semibold mb-4">Como podemos contribuir?</h3>
+                            <p class="mb-4">Cada pessoa pode colaborar usando energia de forma consciente:</p>
+                            <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+                                <li>Apagar luzes de ambientes vazios</li>
+                                <li>Usar equipamentos com selo de eficiência energética</li>
+                                <li>Evitar deixar aparelhos em modo de espera</li>
+                                <li>Optar por fontes renováveis quando possível</li>
+                                <li>Compartilhar conhecimento sobre uso sustentável</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 md:p-8 card-shadow fade-in">
+                            <h3 class="text-2xl font-semibold mb-4">Conclusão</h3>
+                            <p>A ODS 7 busca garantir energia acessível, confiável e sustentável para todos. Embora o mundo e o Brasil tenham avançado no uso de energias limpas, ainda existem desafios: ampliar o acesso à eletricidade e reduzir a dependência de combustíveis fósseis. O compromisso de governos, empresas e sociedade é fundamental para alcançar as metas até 2030.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Referências -->
+        <section id="referencias" class="py-12 md:py-16">
+            <div class="container mx-auto px-4 md:px-6 max-w-4xl">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 fade-in">📚 Referências e Bibliografia</h2>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl p-6 card-shadow fade-in">
+                        <h3 class="text-xl font-semibold text-ods5 mb-4">ODS 5</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                            <li>ONU Brasil – Objetivos de Desenvolvimento Sustentável</li>
+                            <li>Nações Unidas – Objetivo 5: Igualdade de Gênero</li>
+                            <li>Pacto Global da ONU Brasil – ODS 5</li>
+                            <li>IPEA – Agenda 2030 no Brasil</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 rounded-xl p-6 card-shadow fade-in">
+                        <h3 class="text-xl font-semibold text-ods7 mb-4">ODS 7</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                            <li>ONU – Objetivo de Desenvolvimento Sustentável 7</li>
+                            <li>Tracking SDG 7: The Energy Progress Report 2025</li>
+                            <li>EPE – Balanço Energético Nacional 2025</li>
+                            <li>Ministério de Minas e Energia</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 z-40">
+        <i class="fa fa-arrow-up text-lg"></i>
+    </button>
+
+    <footer class="bg-gray-900 text-gray-300 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>Agenda 2030 da ONU | ODS 5 e ODS 7</p>
+            <p class="text-sm mt-2">Construindo um futuro mais justo e sustentável para todos</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Menu Mobile
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Modo Escuro
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        if (localStorage.getItem('theme') === 'dark' ||
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+        darkModeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // Animações ao rolar
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+        fadeElements.forEach(el => observer.observe(el));
+
+        // Animação de números
+        const statElements = document.querySelectorAll('.stat-number');
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const finalValue = parseInt(el.getAttribute('data-value'));
+                    let current = 0;
+                    const duration = 1500;
+                    const stepTime = 20;
+                    const steps = duration / stepTime;
+                    const increment = finalValue / steps;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= finalValue) {
+                            el.textContent = finalValue + '%';
+                            clearInterval(timer);
+                        } else {
+                            el.textContent = Math.round(current) + '%';
+                        }
+                    }, stepTime);
+                    statsObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.8 });
+        statElements.forEach(el => statsObserver.observe(el));
+
+        // Botão Voltar ao Topo
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Fechar menu mobile ao clicar em link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+    </script>
+</body>
+</html>
